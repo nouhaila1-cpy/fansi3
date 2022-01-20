@@ -1,0 +1,87 @@
+{{> partials/menu}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <form id="settingsForm" data-toggle="validator">
+    <div class="col-sm-12">
+        <h2>{{ @root.__ "General settings" }} <span class="float-right"><button type="submit" id="btnSettingsUpdate" class="btn btn-outline-success">{{ @root.__ "Update" }}</button></span></h2>
+    </div>
+    <div class="col-md-12">
+            <div class="form-group">
+                <label>{{ @root.__ "Cart name" }} *</label>
+                <input type="text" class="form-control" name="cartTitle" value="{{config.cartTitle}}" required>
+               
+            </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Cart description" }} *</label>
+                <input type="text" class="form-control" name="cartDescription" value="{{config.cartDescription}}" required>
+                     </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Cart image/logo" }}</label>
+                <input type="text" class="form-control" name="cartLogo" value="{{config.cartLogo}}">
+            </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Cart URL" }} *</label>
+                <input type="text" class="form-control" name="baseUrl" value="{{config.baseUrl}}" required>
+                   </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Cart Email" }} *</label>
+                <input type="email" class="form-control" name="emailAddress" value="{{config.emailAddress}}" required>
+                 </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Currency symbol" }}</label>
+                <input type="text" class="form-control" name="currencySymbol" value="{{currencySymbol config.currencySymbol}}">
+                   </div>
+            {{#contains config.paymentGateway 'blockonomics'}}
+            <div class="form-group">
+                <label>{{ @root.__ "Currency ISO" }}</label>
+                <select class="form-control" name="currencyISO">
+                    <option {{selectState 'DH' config.currencyISO}} value="DH">DH</option>
+                    <option {{selectState 'EUR' config.currencyISO}} value="EUR">EUR</option>
+                    <option {{selectState 'GBP' config.currencyISO}} value="GBP">GBP</option>
+                </select>
+                    </div>
+            {{/contains}}          
+            <div class="form-group">
+                <label>{{ @root.__ "Theme" }}</label>
+                <select class="form-control" name="theme">
+                    {{#each themes}}
+                    <option {{selectState this ../config.theme}} value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+                   </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Products per row" }}</label>
+                <select class="form-control" name="productsPerRow">
+                    <option value="{{config.productsPerRow}}" hidden="hidden" selected="selected">{{config.productsPerRow}}</option>
+                    <option {{selectState '1' config.productsPerRow}}>1</option>
+                    <option {{selectState '2' config.productsPerRow}}>2</option>
+                    <option {{selectState '3' config.productsPerRow}}>3</option>
+                    <option {{selectState '4' config.productsPerRow}}>4</option>
+                </select>
+                   </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Products per page" }}</label>
+                <input type="number" class="form-control" name="productsPerPage" value="{{config.productsPerPage}}">
+                  </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Product Order By" }}</label>
+                <select class="form-control" name="productOrderBy">
+                    <option {{selectState 'date' config.productOrderBy}} value="date">{{ @root.__ "Date" }}</option>
+                    <option {{selectState 'title' config.productOrderBy}} value="title">{{ @root.__ "Title" }}</option>
+                </select>
+                      </div>
+            <div class="form-group">
+                <label>{{ @root.__ "Product Order" }}</label>
+                <select class="form-control" name="productOrder">
+                    <option {{selectState 'descending' config.productOrder}} value="descending">{{ @root.__ "Descending" }}</option>
+                    <option {{selectState 'ascending' config.productOrder}} value="ascending">{{ @root.__ "Ascending" }}</option>
+                </select>
+               </div>
+            <div class="form-group">
+                <label>Footer HTML</label>
+                <textarea class="form-control codemirrorArea" rows="5" id="footerHtml" name="footerHtml">{{footerHtml}}</textarea>
+                <input type="hidden" id="footerHtml_input" name="footerHtml_input">
+            </div>
+            
+    </div>
+  </form>
+</main>

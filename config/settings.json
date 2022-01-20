@@ -1,0 +1,56 @@
+{
+    "cartTitle": "FANSI",
+    "cartDescription": "projet-logiciel",
+    "cartLogo": "",
+    "baseUrl": "http://localhost:1111",
+    "emailHost": "smtp-mail.outlook.com",
+    "emailPort": 587,
+    "emailSecure": false,
+    "emailUser": "nouhailadoulfakar1@gmail.com",
+    "emailPassword": "this_is_the_smtp_password",
+    "emailAddress": "nouhailadoulfakar1@gmail.com",
+    "productsPerRow": 3,
+    "productsPerPage": 6,
+    "footerHtml": "&lt;h4 class=&quot;text-center&quot;&gt;FANSI&lt;/h4&gt;",
+    "googleAnalytics": "",
+    "injectJs": "",
+    "customCss": "",
+    "currencySymbol": "DH",
+    "currencyISO": "DH",
+    "paymentGateway": [
+        "stripe" , "instore" 
+
+    ],
+    "databaseConnectionString": "mongodb+srv://noha:noha@fansi.jz8z5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "theme": "Cloth",
+    "trackStock": false,
+    "orderHook": "",
+    "availableLanguages": [
+        "en"
+    ],
+    "defaultLocale": "en",
+    "maxQuantity": 25,
+    "twitterHandle": "",
+    "facebookAppId": "",
+    "productOrderBy": "date",
+    "productOrder": "descending",
+    "modules": {
+        "enabled": {
+            "shipping": "shipping-basic",
+            "discount": "discount-voucher",
+            
+            "reviews": "reviews-basic"
+        },
+        "loaded": {
+            "shipping": {},
+            "discount": {},
+            "reviews": {}
+        }
+    },
+    "showRelatedProducts": true,
+    "showHomepageVariants": false,
+    "secretCookie": "efaf7f6d5398f681eb3f344ddb23325d34062884",
+    "secretSession": "87515df435cdd7ab33743e2be61e26ea9ce5eee8",
+    "themeViews": "../views/themes/Cloth/",
+    "env": ""
+}
